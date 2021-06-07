@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 
 const List = ({ setCount, count, log, setLog }) => {
   useEffect(() => {
-    console.log("I am Ready ");
-  }, [count]);
+    console.log("Component did mount");
+    return () => {
+      console.log("Component will unmount");
+    };
+  }, []);
 
   return (
     <div>
-      <button className="btn" onClick={() => setCount(count + 1)}>
+      {/*   <button className="btn" onClick={() => setCount(count + 1)}>
         +
       </button>
       <button
@@ -15,7 +18,8 @@ const List = ({ setCount, count, log, setLog }) => {
         onClick={() => setCount((prevState) => prevState - 1)}
       >
         -
-      </button>
+      </button> */}
+      <h1>List Component</h1>
     </div>
   );
 };
